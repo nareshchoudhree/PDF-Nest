@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/basicolor-file-types/24/130_pdf-512.png" type="image/png" />
+    <title>PDF Nest - All-in-One PDF Tools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+        }
+        nav {
+            font-family: 'Poppins', sans-serif;
+        }
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #f59e0b;
+            --accent: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active-nav::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-file-pdf text-3xl text-red-600 mr-2"></i>
+                        <span class="text-xl font-bold text-red-600">PDF Nest</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="nav-link active-nav text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="about.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="compress.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Compress PDF</a>
+                        <a href="split.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Slipt PDF</a>
+                        <a href="merge.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Merge PDF</a>
+                        <a href="pdf-to-image.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">PDF to Img</a>
+                        <a href="image-to-pdf.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Img To PDF</a>
+    
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-red-600 hover:text-red-600 focus:outline-none w-12 h-12 flex items-center justify-center">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Contact</a>
+                <a href="compress.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Compress PDF</a>
+                <a href="split.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Split PDF</a>
+                <a href="merge.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Merge PDF</a>
+                <a href="pdf-to-image.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">PDF to IMG</a>
+                <a href="image-to-pdf.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Img To PDF</a>
+                
+            </div>
+        </div>
+    </nav>
+
+
+
+    <main class="flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
+                    Welcome to PDF Nest
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-600 leading-relaxed">
+                    Your ultimate solution for seamless PDF editing, conversion, and management. Explore our powerful tools below.
+                </p>
+                <a href="#tools" class="mt-6 inline-block bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors">
+                    Get Started
+                </a>
+            </div>
+            <div id="tools" class="tool-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="merge.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-layer-group text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Merge PDF</h3>
+                    <p class="mt-2 text-sm text-gray-600">Combine multiple PDFs into a single, cohesive document.</p>
+                </a>
+                <a href="split.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-cut text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Split PDF</h3>
+                    <p class="mt-2 text-sm text-gray-600">Extract specific pages or split PDFs into multiple files.</p>
+                </a>
+                <a href="compress.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-compress-alt text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Compress PDF</h3>
+                    <p class="mt-2 text-sm text-gray-600">Reduce file size while maintaining crystal-clear quality.</p>
+                </a>
+                <a href="rotate.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-redo text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Rotate PDF</h3>
+                    <p class="mt-2 text-sm text-gray-600">Rotate pages 90, 180, or 270 degrees effortlessly.</p>
+                </a>
+                <a href="watermark.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-stamp text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Watermark PDF</h3>
+                    <p class="mt-2 text-sm text-gray-600">Add text or image watermarks for security and branding.</p>
+                </a>
+                <a href="organize.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-th-large text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Organize PDF</h3>
+                    <p class="mt-2 text-sm text-gray-600">Rearrange, extract, or delete pages with ease.</p>
+                </a>
+                <a href="repair.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-tools text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Repair PDF</h3>
+                    <p class="mt-2 text-sm text-gray-600">Restore corrupted or damaged PDF files quickly.</p>
+                </a>
+                <a href="pdf-to-image.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-image text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">PDF to Image</h3>
+                    <p class="mt-2 text-sm text-gray-600">Convert PDF pages to high-quality image files.</p>
+                </a>
+                <a href="image-to-pdf.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-file-image text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Image to PDF</h3>
+                    <p class="mt-2 text-sm text-gray-600">Transform images into a single, professional PDF.</p>
+                </a>
+                <a href="pdf-to-excel.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-file-excel text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">PDF to Excel</h3>
+                    <p class="mt-2 text-sm text-gray-600">Transform PDF file into a Excel File.</p>
+                </a>
+                <a href="excel-to-pdf.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-file-pdf text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Excel to PDF</h3>
+                    <p class="mt-2 text-sm text-gray-600">Transform Excel file into a Pdf File.</p>
+                </a>
+                <a href="sign-pdf.html" class="tool-card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <i class="fas fa-signature text-red-600 text-4xl mb-4 icon-bounce"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Sign PDF</h3>
+                    <p class="mt-2 text-sm text-gray-600">Add Sign into a Pdf File.</p>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-file-pdf text-white text-2xl mr-2"></i>
+                        <span class="text-xl text-white font-bold">PDF Nest</span>
+                    </div>
+                    <p class="text-sm text-white">The ultimate PDF toolkit for professionals and individuals.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Tools</h4>
+                    <ul class="space-y-2 text-sm text-white">
+                        <li class="flex space-x-12">
+                        <a href="merge.html" class="hover:text-yellow-300 transition-colors">Merge PDF</a>
+                        <a href="compress.html" class="hover:text-yellow-300 transition-colors ml-4">Compress PDF</a>
+                        </li>
+
+                        <li class="flex space-x-16">
+                        <a href="split.html" class="hover:text-yellow-300 transition-colors">Slipt PDF</a>
+                        <a href="rotate.html" class="hover:text-yellow-300 transition-colors ml-4">Rotate PDF</a>
+                        </li>
+                        <li class="flex space-x-4">
+                        <a href="watermark.html" class="hover:text-yellow-300 transition-colors">Watermark PDF</a>
+                        <a href="organize.html" class="hover:text-yellow-300 transition-colors ml-4">Organize PDF</a>
+                        </li>
+                        <li class="flex space-x-12">
+                        <a href="repair.html" class="hover:text-yellow-300 transition-colors">Repair PDF</a>
+                        <a href="sign-pdf.html" class="hover:text-yellow-300 transition-colors ml-4">Sign PDF</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Some Other Links</h4>
+                    <ul class="space-y-2 text-sm text-white">
+                        <li class="flex space-x-12">
+                        <a href="pdf-to-image.html" class="hover:text-yellow-300 transition-colors">PDF to Img </a>
+                        <a href="image-to-pdf.html" class="hover:text-yellow-300 transition-colors ml-4">Img to PDF</a>
+                        </li>
+
+                        <li class="flex space-x-9">
+                        <a href="pdf-to-excel.html" class="hover:text-yellow-300 transition-colors">PDF to Excel</a>
+                        <a href="excel-to-pdf.html" class="hover:text-yellow-300 transition-colors ml-4">Excel to PDF</a>
+                        </li>
+                        <li class="flex space-x-14">
+                        <a href="about.html" class="hover:text-yellow-300 transition-colors">About Us</a>
+                        <a href="add-page-number.html" class="hover:text-yellow-300 transition-colors ml-4">Add Page Number </a>
+                        </li>
+                        <li class="flex space-x-16">
+                        <a href="index.html" class="hover:text-yellow-300 transition-colors">All Tools</a>
+                        <a href="contact.html" class="hover:text-yellow-300 transition-colors ml-4">Contact Us</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://x.com/nareshchoudhree" class="text-white hover:text-yellow-300 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="https://www.instagram.com/naresh.choudhree" class="text-white hover:text-yellow-300 transition-colors"><i class="fab fa-instagram fa-lg text-xl"></i></a>
+                        <a href="https://nareshchoudhree.github.io/my-portfolio/" class="text-white hover:text-yellow-300 transition-colors"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-12 text-center text-sm text-white">© 2025 PDF Nest. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

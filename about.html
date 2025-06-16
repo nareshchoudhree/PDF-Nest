@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/basicolor-file-types/24/130_pdf-512.png" type="image/png" />
+    <title>About Us - PDF Nest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+        }
+        nav {
+            font-family: 'Poppins', sans-serif;
+        }
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #f59e0b;
+            --accent: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active-nav::after {
+            width: 100%;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(229, 53, 53, 0.9) 0%, rgba(100, 21, 21, 0.7) 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+   <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-file-pdf text-3xl text-red-600 mr-2"></i>
+                        <span class="text-xl font-bold text-red-600">PDF Nest</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="nav-link  text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="about.html" class="nav-link active-nav text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="compress.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Compress PDF</a>
+                        <a href="split.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Slipt PDF</a>
+                        <a href="merge.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Merge PDF</a>
+                        <a href="pdf-to-image.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">PDF to Img</a>
+                        <a href="image-to-pdf.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Img To PDF</a>
+    
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-red-600 hover:text-red-600 focus:outline-none w-12 h-12 flex items-center justify-center">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Contact</a>
+                <a href="compress.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Compress PDF</a>
+                <a href="split.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Split PDF</a>
+                <a href="merge.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Merge PDF</a>
+                <a href="pdf-to-image.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">PDF to IMG</a>
+                <a href="image-to-pdf.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Img To PDF</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-gradient text-white py-20 md:py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">About SahiPDF</h1>
+                    <p class="text-lg mb-8 opacity-90">SahiPDF is your go-to platform for seamless PDF management, offering tools to compress, merge, convert, and more, all with a focus on simplicity and efficiency.</p>
+                    <a href="index.html" class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300">Explore Our Tools</a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md justify-center">
+                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-red-400 rounded-full opacity-20 animate-pulse"></div>
+                        <img src="https://cdn3.iconfinder.com/data/icons/basicolor-file-types/24/130_pdf-512.png" alt="PDF Tools" class="rounded-xl shadow-2xl floating relative z-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">We aim to simplify document management for everyone, providing powerful yet user-friendly PDF tools that save time and enhance productivity.</p>
+                <div class="w-20 h-1 bg-red-600 mx-auto mt-4"></div>
+            </div>
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+    
+                <div class="lg:col-span-7">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Who We Are</h3>
+                    <p class="text-gray-600 mb-6">Founded in 2025, SahiPDF is a team of innovators dedicated to making PDF handling effortless. Our tools are designed to meet the needs of students, professionals, and businesses alike.</p>
+                    <div class="mb-8">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full bg-red-600 text-white">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700 font-medium">User-friendly interface for all skill levels</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full bg-red-600 text-white">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700 font-medium">Fast and secure PDF processing</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full bg-red-600 text-white">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700 font-medium">Accessible tools for free</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-file-pdf text-white text-2xl mr-2"></i>
+                        <span class="text-xl text-white font-bold">PDF Nest</span>
+                    </div>
+                    <p class="text-sm text-white">The ultimate PDF toolkit for professionals and individuals.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Tools</h4>
+                    <ul class="space-y-2 text-sm text-white">
+                        <li class="flex space-x-12">
+                        <a href="merge.html" class="hover:text-yellow-300 transition-colors">Merge PDF</a>
+                        <a href="compress.html" class="hover:text-yellow-300 transition-colors ml-4">Compress PDF</a>
+                        </li>
+
+                        <li class="flex space-x-16">
+                        <a href="split.html" class="hover:text-yellow-300 transition-colors">Slipt PDF</a>
+                        <a href="rotate.html" class="hover:text-yellow-300 transition-colors ml-4">Rotate PDF</a>
+                        </li>
+                        <li class="flex space-x-4">
+                        <a href="watermark.html" class="hover:text-yellow-300 transition-colors">Watermark PDF</a>
+                        <a href="organize.html" class="hover:text-yellow-300 transition-colors ml-4">Organize PDF</a>
+                        </li>
+                        <li class="flex space-x-12">
+                        <a href="repair.html" class="hover:text-yellow-300 transition-colors">Repair PDF</a>
+                        <a href="sign-pdf.html" class="hover:text-yellow-300 transition-colors ml-4">Sign PDF</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Some Other Links</h4>
+                    <ul class="space-y-2 text-sm text-white">
+                        <li class="flex space-x-12">
+                        <a href="pdf-to-image.html" class="hover:text-yellow-300 transition-colors">PDF to Img </a>
+                        <a href="image-to-pdf.html" class="hover:text-yellow-300 transition-colors ml-4">Img to PDF</a>
+                        </li>
+
+                        <li class="flex space-x-9">
+                        <a href="pdf-to-excel.html" class="hover:text-yellow-300 transition-colors">PDF to Excel</a>
+                        <a href="excel-to-pdf.html" class="hover:text-yellow-300 transition-colors ml-4">Excel to PDF</a>
+                        </li>
+                        <li class="flex space-x-14">
+                        <a href="about.html" class="hover:text-yellow-300 transition-colors">About Us</a>
+                        <a href="add-page-number.html" class="hover:text-yellow-300 transition-colors ml-4">Add Page Number </a>
+                        </li>
+                        <li class="flex space-x-16">
+                        <a href="index.html" class="hover:text-yellow-300 transition-colors">All Tools</a>
+                        <a href="contact.html" class="hover:text-yellow-300 transition-colors ml-4">Contact Us</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://x.com/nareshchoudhree" class="text-white hover:text-yellow-300 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="https://www.instagram.com/naresh.choudhree" class="text-white hover:text-yellow-300 transition-colors"><i class="fab fa-instagram fa-lg text-xl"></i></a>
+                        <a href="https://nareshchoudhree.github.io/my-portfolio/" class="text-white hover:text-yellow-300 transition-colors"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-12 text-center text-sm text-white">© 2025 PDF Nest. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

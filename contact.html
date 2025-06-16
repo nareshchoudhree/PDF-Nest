@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/basicolor-file-types/24/130_pdf-512.png" type="image/png" />
+    <title>Contact Us - PDF Nest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+        }
+        nav {
+            font-family: 'Poppins', sans-serif;
+        }
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #f59e0b;
+            --accent: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active-nav::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-file-pdf text-3xl text-red-600 mr-2"></i>
+                        <span class="text-xl font-bold text-red-600">PDF Nest</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="about.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="contact.html" class="nav-link active-nav text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="compress.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Compress PDF</a>
+                        <a href="split.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Slipt PDF</a>
+                        <a href="merge.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Merge PDF</a>
+                        <a href="pdf-to-image.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">PDF to Img</a>
+                        <a href="image-to-pdf.html" class="nav-link text-gray-700 hover:text-blue-900 px-3 py-2 text-sm font-medium">Img To PDF</a>
+    
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-red-600 hover:text-red-600 focus:outline-none w-12 h-12 flex items-center justify-center">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Contact</a>
+                <a href="compress.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Compress PDF</a>
+                <a href="split.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Split PDF</a>
+                <a href="merge.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Merge PDF</a>
+                <a href="pdf-to-image.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">PDF to IMG</a>
+                <a href="image-to-pdf.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900">Img To PDF</a>
+                
+            </div>
+        </div>
+    </nav>
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="lg:col-span-6 mb-10 lg:mb-0">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Send Us a Message</h3>
+                    <p class="text-gray-600 mb-6">Fill out the form below, and we'll get back to you promptly.</p>
+                    <div class="bg-red-50 p-6 rounded-lg border border-red-100">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-quote-left text-red-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-gray-700 italic">"SahiPDF's support team was quick to respond and incredibly helpful!"</p>
+                                <p class="mt-2 text-red-600 font-medium">— Happy User</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6">
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <form id="contact-form">
+                            <div class="grid grid-cols-1 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                    <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-600 focus:border-red-600 sm:text-sm">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                    <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-600 focus:border-red-600 sm:text-sm">
+                                </div>
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                                    <input type="text" id="subject" name="subject" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-600 focus:border-red-600 sm:text-sm">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                    <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-600 focus:border-red-600 sm:text-sm"></textarea>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-file-pdf text-white text-2xl mr-2"></i>
+                        <span class="text-xl text-white font-bold">PDF Nest</span>
+                    </div>
+                    <p class="text-sm text-white">The ultimate PDF toolkit for professionals and individuals.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Tools</h4>
+                    <ul class="space-y-2 text-sm text-white">
+                        <li class="flex space-x-12">
+                        <a href="merge.html" class="hover:text-yellow-300 transition-colors">Merge PDF</a>
+                        <a href="compress.html" class="hover:text-yellow-300 transition-colors ml-4">Compress PDF</a>
+                        </li>
+
+                        <li class="flex space-x-16">
+                        <a href="split.html" class="hover:text-yellow-300 transition-colors">Slipt PDF</a>
+                        <a href="rotate.html" class="hover:text-yellow-300 transition-colors ml-4">Rotate PDF</a>
+                        </li>
+                        <li class="flex space-x-4">
+                        <a href="watermark.html" class="hover:text-yellow-300 transition-colors">Watermark PDF</a>
+                        <a href="organize.html" class="hover:text-yellow-300 transition-colors ml-4">Organize PDF</a>
+                        </li>
+                        <li class="flex space-x-12">
+                        <a href="repair.html" class="hover:text-yellow-300 transition-colors">Repair PDF</a>
+                        <a href="sign-pdf.html" class="hover:text-yellow-300 transition-colors ml-4">Sign PDF</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Some Other Links</h4>
+                    <ul class="space-y-2 text-sm text-white">
+                        <li class="flex space-x-12">
+                        <a href="pdf-to-image.html" class="hover:text-yellow-300 transition-colors">PDF to Img </a>
+                        <a href="image-to-pdf.html" class="hover:text-yellow-300 transition-colors ml-4">Img to PDF</a>
+                        </li>
+
+                        <li class="flex space-x-9">
+                        <a href="pdf-to-excel.html" class="hover:text-yellow-300 transition-colors">PDF to Excel</a>
+                        <a href="excel-to-pdf.html" class="hover:text-yellow-300 transition-colors ml-4">Excel to PDF</a>
+                        </li>
+                        <li class="flex space-x-14">
+                        <a href="about.html" class="hover:text-yellow-300 transition-colors">About Us</a>
+                        <a href="add-page-number.html" class="hover:text-yellow-300 transition-colors ml-4">Add Page Number </a>
+                        </li>
+                        <li class="flex space-x-16">
+                        <a href="index.html" class="hover:text-yellow-300 transition-colors">All Tools</a>
+                        <a href="contact.html" class="hover:text-yellow-300 transition-colors ml-4">Contact Us</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://x.com/nareshchoudhree" class="text-white hover:text-yellow-300 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="https://www.instagram.com/naresh.choudhree" class="text-white hover:text-yellow-300 transition-colors"><i class="fab fa-instagram fa-lg text-xl"></i></a>
+                        <a href="https://nareshchoudhree.github.io/my-portfolio/" class="text-white hover:text-yellow-300 transition-colors"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-12 text-center text-sm text-white">© 2025 PDF Nest. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // EmailJS initialization
+            emailjs.init('ZmDeZCBPYPjKPeePA'); // Replace with your EmailJS User ID
+
+            // Form submission
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+                emailjs.send('service_3mmrqah', 'template_umtxdhk', formData)
+                    .then(() => {
+                        alert('Your message has been sent successfully!');
+                        contactForm.reset();
+                    })
+                    .catch((error) => {
+                        console.error('EmailJS error:', error);
+                        alert('There was an error sending your message. Please try again.');
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
