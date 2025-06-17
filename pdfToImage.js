@@ -166,13 +166,23 @@ async function processPdfToImage() {
         for (let i = 0; i < pages.length; i++) {
             const pageNum = pages[i];
             const page = await pdf.getPage(pageNum);
-            const viewport = page.getViewport({ scale: 2.0 });
+            // Use a higher scale for better quality
+            const scale = 2.0;
+            const viewport = page.getViewport({ scale });
             const canvas = document.createElement('canvas');
             const context = canvas.getContext('2d');
-            canvas.width = viewport.height;
-            await page.render({ canvasContext: context, viewport }).promise;
+            // Set canvas dimensions to match PDF page dimensions
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            // Ensure high-quality rendering
+            await page.render({
+                canvasContext: context,
+                viewport,
+                renderInteractiveForms: false,
+                enableWebGL: true // Optimize rendering performance
+            }).promise;
             const blob = await new Promise(resolve => {
-                canvas.toBlob(resolve, `image/${format === 'jpeg' ? 'jpeg' : 'png'}`, format === 'jpeg' ? 0.8 : 1.0);
+                canvas.toBlob(resolve, `image/${format === 'jpeg' ? 'jpeg' : 'png'}`, format === 'jpeg' ? 0.9 : 1.0);
             });
             imageFiles.push({ name: `page-${pageNum}.${format}`, blob });
             updateProgress(((i + 1) / pages.length) * 100);
